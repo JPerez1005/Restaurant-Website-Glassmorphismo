@@ -1,0 +1,666 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root{
+    --primary: #007d68;
+    --second: #3a3a3a;
+    --third: #f2f2f2;
+}
+
+body{
+    /* background: #fff; */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    width: 100%;
+    min-height: 100vh;
+    /* overflow: hidden; */
+    /* background: url('../images/forest-2.jpeg') no-repeat; */
+    /* background-size: cover; */
+    /* background-position: center; */
+}
+
+
+.bg_video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: -1; /* Asegura que esté detrás del contenido */
+}
+
+
+/* Page container */
+.page{
+    position: relative;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(20px);
+    width: 100%;
+    min-height: 100vh;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 0 100px;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+/* Header Section */
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 100px;
+    background: transparent;
+    transition: 0.5s;
+    z-index: 1100;
+}
+
+.logo{
+    position: relative;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 3em;
+    color: #000;
+    letter-spacing: 2px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.cart{
+    position: relative;
+    text-decoration: none;
+    background: #000;
+    box-shadow: 0 0 25px 0 rgba(0,0,0,0.2);
+    padding: 15px;
+    width: 50px;
+    height: 50px;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    transition: 0.3s !important;
+}
+
+.cart:hover{
+    border-radius: 50%;
+}
+
+.cart i{
+    font-size: 1.4em;
+    color: #fff;
+}
+
+.cart .number{
+    position: absolute;
+    right: -2px;
+    bottom: 2px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #fff;
+    font-size: 0.7em;
+    font-weight: 500;
+}
+
+/* Hero banner section */
+.banner{
+    position: relative;
+    width: 100%;
+    /* height: 100vh; */
+    padding: 100px 0 20px;
+    overflow: hidden;
+}
+
+/* Banner navigation */
+.nav{
+    position: absolute;
+    top: 47%;
+    margin: 40px 50px;
+    z-index: 1100;
+}
+
+.nav li{
+    list-style: none;
+    margin: 0 20px 0 0;
+}
+
+.nav li .nav_btn{
+    position: relative;
+    text-decoration: none;
+    background: #000;
+    border: none;
+    padding: 15px;
+    width: 50px;
+    height: 50px;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.nav li .nav_btn:hover{
+    border-radius: 50%;
+    background: var(--primary);
+}
+
+.nav li .nav_btn i{
+    font-size: 1.4em;
+    color: #fff;
+}
+
+/* Banner Carousel */
+.row{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.banner .food_image img{
+    width: 100%;
+}
+
+.banner .content h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #000;
+    font-size: 4.5em;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.banner .content p{
+    margin-top: 100px;
+}
+
+.page_btn{
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #fff;
+    background: #000;
+    box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+    border: none;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    transition: 0.5s;
+    display: inline-flex;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.page_btn:hover{
+    border: none;
+    border-radius: 0;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+/* Main */
+main{
+    padding: 100px 0 50px 0;
+}
+
+/* Primary Menu Section */
+.menu_primary{
+    position: relative;
+    padding: 0px 30px 20px;
+}
+
+.menu_primary::before{
+    position: absolute;
+    content: '';
+    background: url('../images/food-13.png') no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 222px;
+    height: 400px;
+    left: -50px;
+    top: -200px;
+    z-index: -1;
+    transform: rotateZ(45deg);
+}
+
+/* Item Card */
+.card{
+    position: relative !important;
+    background: transparent;
+    border: none;
+    border-radius: 10% !important;
+    padding: 0px 0px !important;
+    /* margin: 0px -12px; */
+    bottom: -145px !important;
+    width: 100%;
+}
+
+.swiper{
+    overflow-y: visible;
+    height: 500px;
+    /* width: 500px; */
+    justify-content: space-around !important;
+}
+
+.card .item_img{
+    position: absolute;
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
+    top: -155px;
+    width: 100%;
+    z-index: 1100;
+}
+
+.card .item_content{
+    position: relative;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(20px);
+    border-radius: 40%;
+    border: none;
+    padding: 130px 40px 20px;
+}
+
+.card .item_content h4{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-size: 2em;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.card .item_content p{
+    font-size: 0.8em;
+    font-weight: 300;
+}
+
+.card .like{
+    position: absolute;
+    right: 20px;
+    top: 30%;
+    width: 28px;
+    height: 28px;
+    background: var(--primary);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.card .like i{
+    color: #fff;
+    font-size: 1em;
+}
+
+.card .price{
+    font-size: 1.2em;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+/* Item Card Button */
+.item_btn{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    text-decoration: none;
+    background: #000;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+    padding: 15px !important;
+    width: 50px;
+    height: 50px;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    transition: 0.3s;
+    cursor: pointer;
+    color: #fff;
+}
+
+.item_btn:hover{
+    border-radius: 50%;
+    color: #fff;
+}
+
+/* Description */
+.description{
+    position: relative;
+    transform: translateY(-15%);
+}
+
+.description h2{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 3.5em;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-align: end;
+}
+
+.description h4{
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-align: end;
+    margin-bottom: 20px;
+}
+
+.description p{
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-align: end;
+}
+
+/* Second menu section */
+
+.menu_second{
+    position: relative;
+    padding: 100px 70px 20px;
+    /* padding-right: 50px; */
+}
+
+.menu_second .item_btn{
+    right: 50px;
+    bottom: 80%;
+}
+
+/* Third Menu Section */
+.menu_third{
+    position: relative;
+    padding: 100px 0px 20px;
+}
+
+.menu_third::before{
+    position: absolute;
+    content: '';
+    background: url('../images/food-7.png') no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+    left: -2%;
+    top: -5%;
+    z-index: -1;
+}
+
+/* Booking */
+.booking{
+    padding: 20px;
+}
+
+.booking h2{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 4em;
+    padding-left: 50px;
+}
+
+/* Reservation Form */
+.booking form input,
+.booking form textarea{
+    background: transparent;
+    outline: none;
+    border: 1px solid rgba(0,0,0,0.5);
+    border-radius: 20px;
+}
+
+.booking form input:focus,
+.booking form textarea:focus{
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(20px);
+}
+
+.booking form label{
+    padding-bottom: 5px;
+}
+
+.booking form .form-group{
+    margin-bottom: 10px;
+}
+
+.booking form button[type='submit']{
+    position: relative;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #fff;
+    background: #000;
+    box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+    border: none;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    transition: 0.3s;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.booking form button[type='submit']:hover{
+    border-radius: 0;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+/* Second Item card */
+
+.card-second{
+    position: relative;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(20px);
+    border-radius: 40px;
+    border: none;
+    padding: 20px;
+}
+
+.card-second .item-img{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 130%;
+}
+
+.card-second .login,
+.card-second .menu{
+    position: absolute;
+    top: 15px;
+}
+
+.card-second .login{
+    left: 20px;
+}
+
+.card-second .menu{
+    right: 20px;
+}
+
+.card-second .login i,
+.card-second .menu i{
+    color: black;
+    font-size: 1.3em;
+}
+
+
+.card-second .item-content h4{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2em;
+    font-weight: 500;
+    margin-top: 10px;
+    letter-spacing: 1px;
+}
+
+.card-second .item-content p{
+    font-size: 0.8em;
+    font-weight: 300;
+}
+
+.card-second .like{
+    position: absolute;
+    top: 60%;
+    right: 20px;
+    width: 28px;
+    height: 28px;
+    background: var(--primary);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.card-second .like i {
+    color: #fff;
+    font-size: 1em;
+}
+
+.card-second .price{
+    font-size: 1.2em;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+/* Download App Section */
+.app-download{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.app-download h2{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2em;
+    font-weight: 800;
+}
+
+.app-download h4{
+    font-size: 1.2em;
+    font-weight: 400;
+    text-align: center;
+}
+
+.app-download p{
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.download img{
+    width: 100%;
+}
+
+/* Coupon Section */
+.coupon{
+    position: relative;
+    padding: 100px 60px 20px;
+    border-bottom: 1px solid #000;
+}
+
+.coupon h3{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2.5em;
+    letter-spacing: 3px;
+}
+
+.coupon-content p{
+    margin-top: 10px;
+    font-size: 0.8em;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+/* Footer Section */
+#footer .footer-top{
+    padding: 60px 0 30px 0;
+    background: transparent;
+}
+
+#footer .footer-top .footer-contact{
+    margin-bottom: 30px;
+}
+
+#footer .footer-top .footer-contact h3{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 3em;
+    margin: 0 0 10px 0;
+    padding: 2px 0 2px 0;
+    line-height: 1;
+    font-weight: 600;
+}
+
+#footer .footer-top .footer-contact p{
+    font-size: 0.8em;
+    line-height: 25px;
+    margin-bottom: 0;
+    color: var(--second);
+}
+
+#footer .footer-top h4{
+    font-size:  1em;
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+#footer .footer-top .footer-link{
+    margin-bottom: 30px;
+}
+
+#footer .footer-top .footer-link ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#footer .footer-top .footer-link ul i{
+    padding-right: 5px;
+    color: var(--second);
+    font-size: 0.9em;
+    line-height: 1;
+}
+
+#footer .footer-top .footer-link ul li{
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+#footer .footer-top .footer-link ul li:first-child{
+    padding-top: 0;
+}
+
+#footer .footer-top .footer-link ul li a{
+    text-decoration: none;
+    color: var(--second);
+    transition: 0.3s;
+    display: inline-block;
+    line-height: 1;
+}
+
+#footer .footer-top .footer-links ul a:hover{
+    color: var(--primary);
+}
+
+#footer .footer-top .footer-links p{
+    color: var(--second);
+}
+
+#footer .footer-top .footer-links a{
+    font-size: 1em;
+    display: inline-block;
+    background: #000;
+    border-radius: 30% 70% 70% 30% / 30%30%70%70%;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.2);
+    color: white;
+    line-height: 1;
+    padding: 8px;
+    margin-right: 4px;
+    text-decoration: none;
+    text-align: center;
+    width: 36px;
+    height: 36px;
+    transition: 0.3s;
+}
+
+#footer .footer-top .footer-links a:hover{
+    color: #fff;
+    background: var(--primary);
+    border-radius: 50%;
+}
+
+#footer .footer-link{
+    text-decoration: none;
+    list-style: none;
+}
